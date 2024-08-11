@@ -33,7 +33,7 @@ export default {
       })
     },
     showdetail(data) {
-      document.querySelector('.company-code').innerHTML = data.code
+      document.querySelector('.overview-companycode').innerHTML = data.code
       document.querySelector('.overview-companyname').innerHTML = data.name;
       
       document.querySelector('#nameInput').value = data.name
@@ -143,7 +143,7 @@ export default {
           <BCardBody>
             <div class="avatar-lg mx-auto mb-3">
               <div class="avatar-title bg-light rounded">
-                <h5>{{ companies.data[0].code }}</h5>
+                <h5 class="overview-companycode">{{ companies.data[0].code }}</h5>
                 <!-- <img src="@assets/images/companies/img-6.png" alt="" class="avatar-sm company-logo" id="company-logo"> -->
               </div>
             </div>
