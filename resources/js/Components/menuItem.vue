@@ -1,6 +1,7 @@
 <script>
 import { Link } from '@inertiajs/vue3';
-import menu from './widgets/menu.yaml';
+// import menu from './widgets/menu.yaml';
+import menu from "@/common/data/menu.yaml"
 
 export default {
   components: {
