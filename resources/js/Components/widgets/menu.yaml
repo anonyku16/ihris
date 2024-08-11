@@ -1,0 +1,295 @@
+- name: Dashboard
+  icon: ri-home-3-line
+  path: /dashboard
+- name: PT
+  icon: ri-home-4-line
+  path: /company
+- name: Dashboards
+  icon: ri-dashboard-line
+  children:
+    - name: Dashboard
+      path: /
+    - name: Analytics
+      path: /dashboard/analytics
+    - name: CRM
+      path: /dashboard/crm
+    - name: Crypto
+      path: /dashboard/crypto
+    - name: Job
+      path: /dashboard/job
+    - name: NFT
+      path: /dashboard/nft
+    - name: Projects
+      path: /dashboard/projects
+
+- name: Apps
+  icon: ri-apps-line
+  children:
+    - name: Calendar
+      path: /calendar
+    - name: Month Grid
+      path: /month-grid
+    - name: Chat
+      path: /chat
+    - name: File Manager
+      path: /apps-file-manager
+    - name: Todo
+      path: /apps-todo
+    - name: Email
+      children:
+        - name: Mailbox
+          path: /mailbox
+        - name: Email Basic
+          path: /email/email-basic
+        - name: Email E-commerce
+          path: /email/email-ecommerce
+    - name: NFT
+      children:
+        - name: Auction
+          path: /apps/nft-auction
+        - name: Collection
+          path: /apps/nft-collection
+        - name: Create
+          path: /apps/nft-create
+        - name: Creators
+          path: /apps/nft-creators
+        - name: Explore
+          path: /apps/nft-explore
+        - name: Item Detail
+          path: /apps/nft-item-detail
+        - name: Marketplace
+          path: /apps/nft-marketplace
+        - name: Ranking
+          path: /apps/nft-ranking
+        - name: Wallet
+          path: /apps/nft-wallet
+    - name: Projects
+      children:
+        - name: List
+          path: /apps/projects-list
+        - name: Overview
+          path: /apps/projects-overview
+        - name: Create
+          path: /apps/projects-create
+    - name: Tasks
+      children:
+        - name: Details
+          path: /apps/tasks-details
+        - name: Kanban
+          path: /apps/tasks-kanban
+        - name: List View
+          path: /apps/tasks-list-view
+    - name: Tickets
+      children:
+        - name: Details
+          path: /apps/tickets-details
+        - name: List
+          path: /apps/tickets-list
+    - name: CRM
+      children:
+        - name: Contacts
+          path: /apps/crm-contacts
+        - name: Companies
+          path: /apps/crm-companies
+        - name: Deals
+          path: /apps/crm-deals
+        - name: Leads
+          path: /apps/crm-leads
+    - name: E-commerce
+      children:
+        - name: Customers
+          path: /ecommerce/customers
+        - name: Products
+          path: /ecommerce/products
+        - name: Product Details
+          path: /ecommerce/product-details
+        - name: Orders
+          path: /ecommerce/orders
+        - name: Order Details
+          path: /ecommerce/order-details
+        - name: Add Product
+          path: /ecommerce/add-product
+        - name: Shopping Cart
+          path: /ecommerce/shopping-cart
+        - name: Checkout
+          path: /ecommerce/checkout
+        - name: Sellers
+          path: /ecommerce/sellers
+        - name: Seller Details
+          path: /ecommerce/seller-details
+    - name: Crypto
+      children:
+        - name: Buy Sell
+          path: /crypto/buy-sell
+        - name: KYC
+          path: /crypto/kyc
+        - name: ICO
+          path: /crypto/ico
+        - name: Orders
+          path: /crypto/orders
+        - name: Wallet
+          path: /crypto/wallet
+        - name: Transactions
+          path: /crypto/transactions
+    - name: Invoices
+      children:
+        - name: Detail
+          path: /invoices/detail
+        - name: List
+          path: /invoices/list
+        - name: Create
+          path: /invoices/create
+    - name: Jobs
+      children:
+        - name: Application
+          path: /jobs/application
+        - name: Candidate Grid
+          path: /jobs/candidate-grid
+        - name: Candidate Lists
+          path: /jobs/candidate-lists
+        - name: Categories
+          path: /jobs/categories
+        - name: Companies List
+          path: /jobs/companies-list
+        - name: Details
+          path: /jobs/details
+        - name: Grid Lists
+          path: /jobs/grid-lists
+        - name: Lists
+          path: /jobs/lists
+        - name: New
+          path: /jobs/new
+        - name: Statistics
+          path: /jobs/statistics
+    - name: API Key
+      path: /apps-api-key
+
+- name: UI Components
+  icon: ri-layout-line
+  children:
+    - name: Alerts
+      path: /ui/alerts
+    - name: Buttons
+      path: /ui/buttons
+    - name: Cards
+      path: /ui/cards
+    - name: Carousel
+      path: /ui/carousel
+    - name: Dropdowns
+      path: /ui/dropdowns
+    - name: Grid
+      path: /ui/grid
+    - name: Images
+      path: /ui/images
+    - name: Modals
+      path: /ui/modals
+    - name: Offcanvas
+      path: /ui/offcanvas
+    - name: Progress
+      path: /ui/progress
+    - name: Placeholders
+      path: /ui/placeholders
+    - name: Accordions
+      path: /ui/accordions
+    - name: Tabs
+      path: /ui/tabs
+    - name: Typography
+      path: /ui/typography
+    - name: Embed Video
+      path: /ui/embed-video
+    - name: Ribbons
+      path: /ui/ribbons
+    - name: Lists
+      path: /ui/lists
+    - name: Links
+      path: /ui/links
+    - name: Utilities
+      path: /ui/utilities
+    - name: Notifications
+      path: /ui/notifications
+    - name: Lightbox
+      path: /ui/lightbox
+    - name: Swiper
+      path: /ui/swiper
+    - name: Countdown
+      path: /ui/countdown
+    - name: Ratings
+      path: /ui/ratings
+    - name: Highlight
+      path: /ui/highlight
+    - name: Scrollspy
+      path: /ui/scrollspy
+    - name: Tooltips
+      path: /ui/tooltips
+    - name: Popovers
+      path: /ui/popovers
+    - name: Toasts
+      path: /ui/toasts
+    - name: UI Kit
+      path: /ui/ui-kit
+
+- name: Forms
+  icon: ri-file-list-3-line
+  children:
+    - name: Form Elements
+      path: /form/elements
+    - name: Form Layouts
+      path: /form/layouts
+    - name: Form Validation
+      path: /form/validation
+    - name: Form Advanced
+      path: /form/advanced
+    - name: Form Editors
+      path: /form/editors
+    - name: Form File Uploads
+      path: /form/file-uploads
+    - name: Form Pickers
+      path: /form/pickers
+    - name: Form Range Slider
+      path: /form/range-sliders
+    - name: Form Wizard
+      path: /form/wizard
+    - name: Form Mask
+      path: /form/masks
+    - name: Form Select
+      path: /form/select
+    - name: Form Checkboxs Radio
+      path: /form/checkboxs-radios
+
+- name: Charts
+  icon: ri-pie-chart-line
+  children:
+    - name: Apex Charts
+      path: /charts/apex
+    - name: Chartjs Charts
+      path: /charts/chartjs
+    - name: Echarts
+      path: /charts/echarts
+    - name: Toast UI Charts
+      path: /charts/toast
+
+- name: Tables
+  icon: ri-table-2-line
+  children:
+    - name: Basic
+      path: /tables/basic
+    - name: Gridjs
+      path: /tables/gridjs
+
+- name: Auth Pages
+  icon: ri-shield-user-line
+  children:
+    - name: Sign In
+      path: /auth/sign-in
+    - name: Sign Up
+      path: /auth/sign-up
+    - name: Sign Out
+      path: /auth/sign-out
+    - name: Reset Password
+      path: /auth/reset-password
+    - name: Change Password
+      path: /auth/change-password
+    - name: Lock Screen
+      path: /auth/lock-screen
+    - name: Logout
+      path: /auth/logout
