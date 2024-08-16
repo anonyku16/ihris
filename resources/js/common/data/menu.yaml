@@ -1,9 +1,12 @@
 - name: Dashboard
   icon: ri-home-3-line
   path: /
-- name: PT
+- name: Company
   icon: ri-home-4-line
   path: /company
+- name: Team
+  icon: ri-team-line
+  path: /team
 - name: Dashboards
   icon: ri-dashboard-line
   children:

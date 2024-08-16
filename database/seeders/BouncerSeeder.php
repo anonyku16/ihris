@@ -6,6 +6,8 @@ use Bouncer;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Role;
+use App\Models\Company;
 
 class BouncerSeeder extends Seeder
 {
@@ -14,10 +16,22 @@ class BouncerSeeder extends Seeder
      */
     public function run(): void
     {
-        
-        Bouncer::allow('superadmin')->everything();
 
-        Bouncer::allow('admin')->everything();
-        Bouncer::forbid('admin')->toManage(User::class);
+        $su = Bouncer::role()->create([
+            'name'=>'super-admin',
+            'title' => 'Super Admin',
+            'description' => 'Super Admin',
+            'icon' => 'vaeagfzc'
+        ]);
+
+        $company = Bouncer::role()->create([
+            'name'=>'company-manager',
+            'title' => 'Company Manager',
+            'description' => 'Manage Company Data',
+            'icon' => 'qhviklyi'
+        ]);
+
+        Bouncer::allow('super-admin')->everything();
+        Bouncer::allow('company-manager')->toManage(Company::class);
     }
 }
