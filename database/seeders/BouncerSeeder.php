@@ -21,14 +21,14 @@ class BouncerSeeder extends Seeder
             'name'=>'super-admin',
             'title' => 'Super Admin',
             'description' => 'Super Admin',
-            'icon' => 'vaeagfzc'
+            'icon' => 'spxnqpau'
         ]);
 
         $company = Bouncer::role()->create([
             'name'=>'company-manager',
             'title' => 'Company Manager',
             'description' => 'Manage Company Data',
-            'icon' => 'qhviklyi'
+            'icon' => 'hfmdczge'
         ]);
 
         Bouncer::allow('super-admin')->everything();

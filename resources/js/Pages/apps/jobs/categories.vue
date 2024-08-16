@@ -19,6 +19,25 @@ import animationData11 from "@/Components/widgets/xhebrhsj.json";
 import animationData12 from "@/Components/widgets/ucvsemjq.json";
 import animationData13 from "@/Components/widgets/pvbjsfif.json";
 import animationData14 from "@/Components/widgets/auvicynv.json";
+import animationData15 from "@/Components/widgets/etwtznjn.json";
+import animationData16 from "@/Components/widgets/fhtaantg.json";
+import animationData17 from "@/Components/widgets/gsqxdxog.json";
+import animationData18 from "@/Components/widgets/hrqwmuhr.json";
+import animationData19 from "@/Components/widgets/hzomhqxz.json";
+import animationData20 from "@/Components/widgets/kbtmbyzy.json";
+import animationData21 from "@/Components/widgets/lupuorrc.json";
+import animationData22 from "@/Components/widgets/msoeawqm.json";
+import animationData23 from "@/Components/widgets/nkmsrxys.json";
+import animationData24 from "@/Components/widgets/pithnlch.json";
+import animationData25 from "@/Components/widgets/qhviklyi.json";
+import animationData26 from "@/Components/widgets/rhvddzym.json";
+import animationData27 from "@/Components/widgets/spxnqpau.json";
+import animationData28 from "@/Components/widgets/tdrtiskw.json";
+import animationData29 from "@/Components/widgets/tqywkdcz.json";
+import animationData30 from "@/Components/widgets/uetqnvvg.json";
+import animationData31 from "@/Components/widgets/vaeagfzc.json";
+import animationData32 from "@/Components/widgets/yeallgsa.json";
+import animationData33 from "@/Components/widgets/zpxybbhl.json";
 
 export default {
   data() {
@@ -68,6 +87,25 @@ export default {
       defaultOptions14: {
         animationData: animationData14
       },
+      defaultOptions15: {animationData: animationData15},
+      defaultOptions16: {animationData: animationData16},
+      defaultOptions17: {animationData: animationData17},
+      defaultOptions18: {animationData: animationData18},
+      defaultOptions19: {animationData: animationData19},
+      defaultOptions20: {animationData: animationData20},
+      defaultOptions21: {animationData: animationData21},
+      defaultOptions22: {animationData: animationData22},
+      defaultOptions23: {animationData: animationData23},
+      defaultOptions24: {animationData: animationData24},
+      defaultOptions25: {animationData: animationData25},
+      defaultOptions26: {animationData: animationData26},
+      defaultOptions27: {animationData: animationData27},
+      defaultOptions28: {animationData: animationData28},
+      defaultOptions29: {animationData: animationData29},
+      defaultOptions30: {animationData: animationData30},
+      defaultOptions31: {animationData: animationData31},
+      defaultOptions32: {animationData: animationData32},
+      defaultOptions33: {animationData: animationData33},
 
     };
   },
@@ -292,6 +330,234 @@ export default {
         <BCard no-body>
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions14" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions15" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions16" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions17" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions18" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions19" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions20" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions21" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions22" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions23" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions24" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions25" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions26" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions27" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions28" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions29" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions30" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions31" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions32" trigger="hover"
+              :height="50" :width="50" />
+            <BLink href="#!" class="stretched-link">
+              <h5 class="mt-4">Catering & Tourism</h5>
+            </BLink>
+            <p class="text-muted mb-0">35 Position</p>
+          </BCardBody>
+        </BCard>
+      </BCol>
+      <BCol>
+        <BCard no-body>
+          <BCardBody class="text-center py-4">
+            <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions33" trigger="hover"
               :height="50" :width="50" />
             <BLink href="#!" class="stretched-link">
               <h5 class="mt-4">Catering & Tourism</h5>
