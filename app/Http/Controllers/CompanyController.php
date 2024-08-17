@@ -19,12 +19,18 @@ class CompanyController extends Controller
         $sortDirection = $request->input('direction', 'asc'); // Default to 'asc' if not provided
         $query->orderBy($sortField, $sortDirection);
 
+        $searchString = $request->input('search');
+        if ($searchString) {
+            $query->where('name', 'like', '%' . $searchString . '%');
+            $query->orWhere('code', 'like', '%' . $searchString . '%');
+        }
 
-        $companies = $query->paginate(12);
+        $companies = $query->paginate(12)->withQueryString();
         return Inertia::render('ihris/company', [
             'companies' => fn () => $companies,
             'sort' => fn () => $sortField,
-            'direction' => fn () => $sortDirection
+            'direction' => fn () => $sortDirection,
+            'filters' => fn () => $searchString
         ]);
     }
 
