@@ -26,7 +26,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
         Route::controller(CompanyController::class)->group(function () {
             Route::get('/company', 'index')->name('company.index');
+            Route::post('/company', 'store')->name('company.store');
         });
+
         Route::controller(RoleController::class)->group(function () {
             Route::get('/team', 'index')->name('team.index');
         });

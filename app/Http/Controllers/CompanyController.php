@@ -39,7 +39,6 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -47,7 +46,18 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required|string|max:255',
+            'code' => 'required|string|max:255',
+        ]);
+
+        try {
+            Company::create($validate);
+        } catch (\Throwable $th) {
+            dd($th->getMessage());
+        }
+
+        return to_route('company.index');
     }
 
     /**

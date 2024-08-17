@@ -6,6 +6,8 @@ import {
 } from '@inertiajs/vue3';
 import Layout from "@/Layouts/main.vue";
 import PageHeader from "@/Components/page-header.vue";
+import CreateCompanyModal from '@/Components/company/modal-create.vue'
+import { Inertia } from '@inertiajs/inertia';
 
 export default {
     props: {
@@ -20,14 +22,16 @@ export default {
             sortDirection: this.direction || 'asc',
             //   links: this.companies.links.slice(1, -1),
             search: this.filters || '',
-            debounceTimeout: null
+            debounceTimeout: null,
+            showModal: false
         };
     },
     components: {
         Layout,
         PageHeader,
         Head,
-        Link
+        Link,
+        CreateCompanyModal
     },
     computed: {
         paginatedLinks() {
@@ -74,6 +78,19 @@ export default {
                 });
                 this.showdetail(this.companies.data[0])
             }, 500);
+        },
+        openModal() {
+            this.showModal = !this.showModal
+        },
+        handleSubmit(formData) {
+            Inertia.post(route('company.store'), formData, {
+                onSuccess: () => {
+                    // Handle success
+                },
+                onError: (response) => {
+                    this.errors = response.errors || {};
+                }
+            })
         }
     },
 };
@@ -81,6 +98,7 @@ export default {
 
 <template>
     <Layout>
+        <CreateCompanyModal v-model="showModal" @submit="handleSubmit" />
 
         <Head title="Companies List" />
         <PageHeader title="Companies List" pageTitle="Companies" />
@@ -89,7 +107,7 @@ export default {
                 <BCard no-body>
                     <BCardBody>
                         <BForm>
-                            <BRow class="g-3">
+                            <BRow class="g-3 justify-content-between">
                                 <BCol xxl="5" sm="6">
                                     <div class="search-box">
                                         <input type="text" class="form-control search bg-light border-light"
@@ -97,6 +115,11 @@ export default {
                                             v-model="search">
                                         <i class="ri-search-line search-icon"></i>
                                     </div>
+                                </BCol>
+                                <BCol lg="auto">
+                                    <BButton variant="info" class="add-btn" @click="openModal"><i
+                                            class="ri-add-fill me-1 align-bottom"></i> Add Company
+                                    </BButton>
                                 </BCol>
                             </BRow>
                         </BForm>
