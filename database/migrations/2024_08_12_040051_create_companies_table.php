@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('code');
+            $table->string('name')->required();
+            $table->string('code')->required();
             $table->string('alamat')->nullable();
             $table->string('npwp')->nullable();
             $table->string('bpjs')->nullable();
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('no_rekening')->nullable();
             $table->timestamps();
         });
-    }   
+    }
 
     /**
      * Reverse the migrations.
