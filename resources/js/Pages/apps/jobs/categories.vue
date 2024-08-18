@@ -163,9 +163,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions" :height="50"
               :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Business Development</h5>
-            </BLink>
+            <h5 class="mt-4">xulniijg</h5>
             <p class="text-muted mb-0">102 Position</p>
           </BCardBody>
         </BCard>
@@ -175,9 +173,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions1" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Automotive Jobs</h5>
-            </BLink>
+            <h5 class="mt-4">oclwxpmm</h5>
             <p class="text-muted mb-0">64 Position</p>
           </BCardBody>
         </BCard>
@@ -187,9 +183,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions2" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Construction / Facilities</h5>
-            </BLink>
+            <h5 class="mt-4">dklbhvrt</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -199,9 +193,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions3" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Design, Art & Multimedia</h5>
-            </BLink>
+            <h5 class="mt-4">adwosptt</h5>
             <p class="text-muted mb-0">49 Position</p>
           </BCardBody>
         </BCard>
@@ -211,9 +203,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions4" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Healthcare</h5>
-            </BLink>
+            <h5 class="mt-4">kkcllwsu</h5>
             <p class="text-muted mb-0">97 Position</p>
           </BCardBody>
         </BCard>
@@ -223,9 +213,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions5" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Sales & Marketing</h5>
-            </BLink>
+            <h5 class="mt-4">rahcoaeu</h5>
             <p class="text-muted mb-0">312 Position</p>
           </BCardBody>
         </BCard>
@@ -235,9 +223,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions6" :trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Accounting / Finance</h5>
-            </BLink>
+            <h5 class="mt-4">smauprql</h5>
             <p class="text-muted mb-0">62 Position</p>
           </BCardBody>
         </BCard>
@@ -247,9 +233,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions7" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Project Management</h5>
-            </BLink>
+            <h5 class="mt-4">itykargr</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -259,9 +243,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions8" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Customer Services</h5>
-            </BLink>
+            <h5 class="mt-4">cnyeuzxc</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -271,9 +253,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions9" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Content Writer</h5>
-            </BLink>
+            <h5 class="mt-4">sygggnra</h5>
             <p class="text-muted mb-0">746 Position</p>
           </BCardBody>
         </BCard>
@@ -283,9 +263,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions10" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Government Jobs</h5>
-            </BLink>
+            <h5 class="mt-4">hfmdczge</h5>
             <p class="text-muted mb-0">642 Position</p>
           </BCardBody>
         </BCard>
@@ -295,9 +273,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions11" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Digital Marketing</h5>
-            </BLink>
+            <h5 class="mt-4">xhebrhsj</h5>
             <p class="text-muted mb-0">364 Position</p>
           </BCardBody>
         </BCard>
@@ -307,9 +283,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions12" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Education & training</h5>
-            </BLink>
+            <h5 class="mt-4">ucvsemjq</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -319,9 +293,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions13" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">IT & Software</h5>
-            </BLink>
+            <h5 class="mt-4">pvbjsfif</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -331,9 +303,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions14" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">auvicynv</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -343,9 +313,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions15" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">etwtznjn</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -355,9 +323,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions16" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">fhtaantg</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -367,9 +333,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions17" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">gsqxdxog</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -379,9 +343,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions18" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">hrqwmuhr</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -391,9 +353,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions19" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">hzomhqxz</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -403,9 +363,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions20" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">kbtmbyzy</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -415,9 +373,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions21" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">lupuorrc</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -427,9 +383,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions22" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">msoeawqm</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -439,9 +393,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions23" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">nkmsrxys</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -451,9 +403,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions24" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">pithnlch</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -463,9 +413,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions25" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">qhviklyi</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -475,9 +423,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions26" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">rhvddzym</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -487,9 +433,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions27" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">spxnqpau</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -499,9 +443,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions28" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">tdrtiskw</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -511,9 +453,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions29" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">tqywkdcz</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -523,9 +463,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions30" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">uetqnvvg</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -535,9 +473,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions31" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">vaeagfzc</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -547,9 +483,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions32" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">yeallgsa</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>
@@ -559,9 +493,7 @@ export default {
           <BCardBody class="text-center py-4">
             <lottie class="avatar-xl icon-primary" colors="primary:#405189" :options="defaultOptions33" trigger="hover"
               :height="50" :width="50" />
-            <BLink href="#!" class="stretched-link">
-              <h5 class="mt-4">Catering & Tourism</h5>
-            </BLink>
+            <h5 class="mt-4">zpxybbhl</h5>
             <p class="text-muted mb-0">35 Position</p>
           </BCardBody>
         </BCard>

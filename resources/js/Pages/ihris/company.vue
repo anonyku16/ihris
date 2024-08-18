@@ -1,104 +1,106 @@
-<script>
-import {
-    Head,
-    Link,
-    router
-} from '@inertiajs/vue3';
+<script setup>
+import { computed, reactive } from 'vue';
+import { Head, Link, router } from '@inertiajs/vue3';
 import Layout from "@/Layouts/main.vue";
 import PageHeader from "@/Components/page-header.vue";
 import CreateCompanyModal from '@/Components/company/modal-create.vue'
-import { Inertia } from '@inertiajs/inertia';
+import SuccessModal from '@/Components/SuccessModal.vue';
+import ConfirmDeleteModal from '@/Components/ConfirmDeleteModal.vue';
 
-export default {
-    props: {
-        companies: Object,
-        sort: String,
-        direction: String,
-        filters: String
-    },
-    data() {
-        return {
-            sortField: this.sort || 'name',
-            sortDirection: this.direction || 'asc',
-            //   links: this.companies.links.slice(1, -1),
-            search: this.filters || '',
-            debounceTimeout: null,
-            showModal: false
-        };
-    },
-    components: {
-        Layout,
-        PageHeader,
-        Head,
-        Link,
-        CreateCompanyModal
-    },
-    computed: {
-        paginatedLinks() {
-            return this.companies.links.slice(1, -1); // Removes the first and last elements
+const props = defineProps({
+    companies: Object,
+    sort: String,
+    direction: String,
+    filters: String
+});
+
+const data = reactive({
+    sortField: props.sort || 'name',
+    sortDirection: props.direction || 'asc',
+    search: props.filters || '',
+    debounceTimeout: null,
+    showModal: false,
+    successModal: false,
+    deleteModal: false,
+    modalInfo: '',
+    modalMessage: ''
+});
+
+const paginatedLinks = computed(() => {
+    return props.companies.links.slice(1, -1); // Removes the first and last elements
+});
+
+function onSort(column) {
+    data.sortDirection = data.sortDirection === 'asc' ? 'desc' : 'asc';
+    router.reload({
+        only: ['companies'],
+        data: {
+            sort: column,
+            direction: data.sortDirection
         }
-    },
-    methods: {
-        onSort(column) {
-            this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
-            router.reload({
-                only: ['companies'],
-                data: {
-                    sort: column,
-                    direction: this.sortDirection
-                }
-            })
-        },
-        showdetail(data) {
-            document.querySelector('.overview-companycode').innerHTML = data.code
-            document.querySelector('.overview-companyname').innerHTML = data.name;
+    });
+}
 
-            document.querySelector('#nameInput').value = data.name
-            document.querySelector('#codeInput').value = data.code
-            document.querySelector('#alamatInput').value = data.alamat
-            document.querySelector('#npwpInput').value = data.npwp
-            document.querySelector('#bpjsInput').value = data.bpjs
-            document.querySelector('#bankInput').value = data.nama_bank
-            document.querySelector('#rekeningInput').value = data.no_rekening
-            document.querySelector('#akunInput').value = data.nama_akun
-        },
-        onSearch() {
-            if (this.debounceTimeout) {
-                clearTimeout(this.debounceTimeout);
+function showdetail(data) {
+    document.querySelector('.overview-companycode').innerHTML = data.code
+    document.querySelector('.overview-companyname').innerHTML = data.name;
+
+    document.querySelector('#nameInput').value = data.name
+    document.querySelector('#codeInput').value = data.code
+    document.querySelector('#alamatInput').value = data.alamat
+    document.querySelector('#npwpInput').value = data.npwp
+    document.querySelector('#bpjsInput').value = data.bpjs
+    document.querySelector('#bankInput').value = data.nama_bank
+    document.querySelector('#rekeningInput').value = data.no_rekening
+    document.querySelector('#akunInput').value = data.nama_akun
+}
+
+function onSearch() {
+    if (data.debounceTimeout) {
+        clearTimeout(data.debounceTimeout);
+    }
+    data.debounceTimeout = setTimeout(() => {
+        router.reload({
+            only: ['companies'],
+            data: {
+                search: data.search,
+                sort: data.sortField,
+                direction: data.sortDirection,
+                page: 1
             }
-            this.debounceTimeout = setTimeout(() => {
-                router.reload({
-                    only: ['companies'],
-                    data: {
-                        search: this.search,
-                        sort: this.sortField,
-                        direction: this.sortDirection,
-                        page: 1
-                    }
-                });
-                this.showdetail(this.companies.data[0])
-            }, 500);
-        },
-        openModal() {
-            this.showModal = !this.showModal
-        },
-        handleSubmit(formData) {
-            Inertia.post(route('company.store'), formData, {
-                onSuccess: () => {
-                    // Handle success
-                },
-                onError: (response) => {
-                    this.errors = response.errors || {};
-                }
-            })
+        });
+        showdetail(props.companies.data[0])
+    }, 500);
+}
+
+function openModal() {
+    data.showModal = !data.showModal
+}
+
+function handleSubmit(form) {
+    form.post('/company', {
+        onSuccess: (res) => {
+            console.log(res)
+            data.showModal = false
+            data.successModal = true
         }
-    },
-};
+    })
+}
+
+function openDeleteModal() {
+    data.deleteModal = !data.deleteModal
+}
+
+function handleDelete(id) {
+
+}
 </script>
 
 <template>
     <Layout>
-        <CreateCompanyModal v-model="showModal" @submit="handleSubmit" />
+        <CreateCompanyModal v-model="data.showModal" @close="data.showModal = false"  @submit="handleSubmit" />
+        <SuccessModal v-model="data.successModal" @close="data.successModal = false"/>
+        <ConfirmDeleteModal v-model="data.deleteModal" @close="data.deleteModal = false"/>
 
         <Head title="Companies List" />
         <PageHeader title="Companies List" pageTitle="Companies" />
@@ -112,7 +114,7 @@ export default {
                                     <div class="search-box">
                                         <input type="text" class="form-control search bg-light border-light"
                                             id="searchCompany" placeholder="Search for company" @input="onSearch"
-                                            v-model="search">
+                                            v-model="data.search">
                                         <i class="ri-search-line search-icon"></i>
                                     </div>
                                 </BCol>
@@ -153,7 +155,10 @@ export default {
                     <span class="since">{{ company . since }}</span>
                   </div> -->
                                 </div>
-                                <div>
+                                <div class="d-flex gap-2">
+                                    <BButton type="button" variant="secondary"  class="w-100 viewcompany-list btn-animation waves-effect waves-light"
+                                        @click="showdetail(company)">
+                                        Projects</BButton>
                                     <BButton type="button" variant="soft-primary" class="w-100 viewcompany-list"
                                         @click="showdetail(company)">
                                         Details</BButton>
@@ -197,14 +202,14 @@ export default {
                     <BCardBody>
                         <div class="avatar-lg mx-auto mb-3">
                             <div class="avatar-title bg-light rounded">
-                                <h5 class="overview-companycode">{{ companies.data[0].code }}</h5>
+                                <h5 class="overview-companycode">{{ companies.data[0]?.code }}</h5>
                                 <!-- <img src="@assets/images/companies/img-6.png" alt="" class="avatar-sm company-logo" id="company-logo"> -->
                             </div>
                         </div>
 
                         <div class="text-center">
                             <BLink href="#!">
-                                <h5 class="overview-companyname" id="overview-companyname">{{ companies.data[0].name
+                                <h5 class="overview-companyname" id="overview-companyname">{{ companies.data[0]?.name
                                     }}
                                 </h5>
                             </BLink>
@@ -217,35 +222,35 @@ export default {
                                 <div>
                                     <label for="placeholderInput" class="form-label">NAMA PT</label>
                                     <input type="text" class="form-control" id="nameInput" placeholder="NAMA PT"
-                                        :value=companies.data[0].name>
+                                        :value=companies.data[0]?.name>
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">KODE PT</label>
                                     <input type="text" class="form-control" id="codeInput" placeholder="KODE PT"
-                                        :value=companies.data[0].code>
+                                        :value=companies.data[0]?.code>
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">ALAMAT</label>
                                     <textarea class="form-control" id="alamatInput"
-                                        rows="3">{{ companies.data[0].alamat }}</textarea>
+                                        rows="3">{{ companies.data[0]?.alamat }}</textarea>
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">NPWP</label>
                                     <input type="text" class="form-control" id="npwpInput" placeholder="NPWP"
-                                        :value=companies.data[0].npwp>
+                                        :value=companies.data[0]?.npwp>
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">BPJS</label>
                                     <input type="text" class="form-control" id="bpjsInput" placeholder="BPJS"
-                                        :value=companies.data[0].bpjs>
+                                        :value=companies.data[0]?.bpjs>
                                 </div>
                             </BCol>
 
@@ -253,21 +258,21 @@ export default {
                                 <div>
                                     <label for="placeholderInput" class="form-label">BANK</label>
                                     <input type="text" class="form-control" id="bankInput" placeholder="BANK"
-                                        :value=companies.data[0].nama_bank>
+                                        :value=companies.data[0]?.nama_bank>
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">NO REKENING</label>
                                     <input type="text" class="form-control" id="rekeningInput" placeholder="NO REKENING"
-                                        :value=companies.data[0].no_rekening>
+                                        :value=companies.data[0]?.no_rekening>
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">NAMA AKUN</label>
                                     <input type="text" class="form-control" id="akunInput" placeholder="NAMA AKUN"
-                                        :value=companies.data[0].nama_akun>
+                                        :value=companies.data[0]?.nama_akun>
                                 </div>
                             </BCol>
                         </BRow>
@@ -275,9 +280,9 @@ export default {
                         <div class="hstack gap-3">
                             <BButton type="button" variant="soft-success"
                                 class="custom-toggle w-100 material-shadow-none" data-bs-toggle="button">
-                                <span class="icon-on"><i class="ri-add-line align-bottom me-1"></i> Edit</span>
+                                <span class="icon-on"><i class="ri-check-line align-bottom me-1"></i> Save</span>
                             </BButton>
-                            <BLink href="#!" class="btn btn-danger w-100">Delete <i
+                            <BLink href="#!" class="btn btn-danger w-100" @click="openDeleteModal">Delete <i
                                     class="ri-arrow-right-line align-bottom"></i>
                             </BLink>
                         </div>

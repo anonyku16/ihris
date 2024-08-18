@@ -1,41 +1,43 @@
-<script>
-import { reactive } from 'vue'
+<script setup>
+import { useForm } from '@inertiajs/vue3';
+import { ref, watch } from 'vue';
 
-export default {
-    props: {
-        showModal: {
-            type: Boolean,
-            default: false
-        }
-    },
-    data() {
-        return {
-            formData: reactive({
-                name: '',
-                code: '',
-                alamat: '',
-                npwp: '',
-                bpjs: '',
-                nama_bank: '',
-                no_rekening: '',
-                nama_akun: ''
-            })
-        }
-    },
-    methods: {
-        // changecustomerName(e) {
-        //     const msg = document.querySelector(".varyingcontentModal");
-        //     const customerName = document.getElementById("customer-name");
-        //     this.showModal = !this.showModal,
-        //         msg.innerText = "New message to " + e;
-        //     customerName.value = e;
-        // },
-        submitForm() {
-            this.$emit('submit', this.formData)
-            this.$emit('close')
-        }
-    },
+
+const props = defineProps({
+    showModal: {
+        type: Boolean,
+        default: false
+    }
+});
+
+const formData = useForm({
+    name: '',
+    code: '',
+    alamat: '',
+    npwp: '',
+    bpjs: '',
+    nama_bank: '',
+    no_rekening: '',
+    nama_akun: ''
+})
+
+const emit = defineEmits(['submit', 'close']);
+
+const modalVisible = ref(props.showModal);
+
+watch(() => props.showModal, (newVal) => {
+    modalVisible.value = newVal;
+});
+
+const closeModal = () => {
+    modalVisible.value = false;
+    emit('close');
 };
+
+const submitForm = () => {
+    emit('submit', formData)
+}
+
 </script>
 <template>
     <BModal hide-footer title="New Company" title-class="varyingcontentModal" class="v-modal-custom">
@@ -58,11 +60,11 @@ export default {
             </div>
             <div class="mb-3">
                 <label for="bpjsInput" class="form-label">BPJS</label>
-                <input v-model="formData.bpjs" type="text" class="form-control" id="bpjsInput" >
+                <input v-model="formData.bpjs" type="text" class="form-control" id="bpjsInput">
             </div>
             <div class="mb-3">
                 <label for="bankInput" class="form-label">BANK</label>
-                <input v-model="formData.nama_bank" type="text" class="form-control" id="bankInput" >
+                <input v-model="formData.nama_bank" type="text" class="form-control" id="bankInput">
             </div>
             <div class="mb-3">
                 <label for="rekeningInput" class="form-label">NO REKENING</label>
@@ -73,9 +75,9 @@ export default {
                 <input v-model="formData.nama_akun" type="text" class="form-control" id="akunInput">
             </div>
             <div class="modal-footer v-modal-footer">
-                <BButton type="button" variant="light" @click="modalShow = false">Back
+                <BButton type="button" variant="light" @click="closeModal">Back
                 </BButton>
-                <BButton type="submit" variant="primary">Submit</BButton>
+                <BButton type="submit" variant="primary" :disabled="formData.processing">Submit</BButton>
             </div>
         </form>
     </BModal>
