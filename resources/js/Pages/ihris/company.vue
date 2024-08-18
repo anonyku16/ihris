@@ -1,11 +1,12 @@
 <script setup>
 import { computed, reactive } from 'vue';
-import { Head, Link, router } from '@inertiajs/vue3';
+import { Head, Link, router, useForm } from '@inertiajs/vue3';
 import Layout from "@/Layouts/main.vue";
 import PageHeader from "@/Components/page-header.vue";
 import CreateCompanyModal from '@/Components/company/modal-create.vue'
 import SuccessModal from '@/Components/SuccessModal.vue';
 import ConfirmDeleteModal from '@/Components/ConfirmDeleteModal.vue';
+import { ref } from 'vue';
 
 const props = defineProps({
     companies: Object,
@@ -21,10 +22,21 @@ const data = reactive({
     debounceTimeout: null,
     showModal: false,
     successModal: false,
-    deleteModal: false,
-    modalInfo: '',
-    modalMessage: ''
+    deleteModal: false
 });
+
+const editForm = useForm({
+    name: props.companies.data.length > 0 ? props.companies.data[0].name : '',
+    code: props.companies.data.length > 0 ? props.companies.data[0].code : '',
+    alamat: props.companies.data.length > 0 ? props.companies.data[0].alamat : '',
+    npwp: props.companies.data.length > 0 ? props.companies.data[0].npwp : '',
+    bpjs: props.companies.data.length > 0 ? props.companies.data[0].bpjs : '',
+    nama_bank: props.companies.data.length > 0 ? props.companies.data[0].nama_bank : '',
+    no_rekening: props.companies.data.length > 0 ? props.companies.data[0].no_rekening : '',
+    nama_akun: props.companies.data.length > 0 ? props.companies.data[0].nama_akun : ''
+})
+const modalMessage = ref(['','']);
+const selectedCompany = ref(props.companies.data.length > 0 ? props.companies.data[0] : null);
 
 const paginatedLinks = computed(() => {
     return props.companies.links.slice(1, -1); // Removes the first and last elements
@@ -45,14 +57,15 @@ function showdetail(data) {
     document.querySelector('.overview-companycode').innerHTML = data.code
     document.querySelector('.overview-companyname').innerHTML = data.name;
 
-    document.querySelector('#nameInput').value = data.name
-    document.querySelector('#codeInput').value = data.code
-    document.querySelector('#alamatInput').value = data.alamat
-    document.querySelector('#npwpInput').value = data.npwp
-    document.querySelector('#bpjsInput').value = data.bpjs
-    document.querySelector('#bankInput').value = data.nama_bank
-    document.querySelector('#rekeningInput').value = data.no_rekening
-    document.querySelector('#akunInput').value = data.nama_akun
+    editForm.name = data.name
+    editForm.code = data.code
+    editForm.alamat = data.alamat
+    editForm.npwp = data.npwp
+    editForm.bpjs = data.bpjs
+    editForm.nama_bank = data.nama_bank
+    editForm.no_rekening = data.no_rekening
+    editForm.nama_akun = data.nama_akun
+    selectedCompany.value = data;
 }
 
 function onSearch() {
@@ -79,28 +92,44 @@ function openModal() {
 
 function handleSubmit(form) {
     form.post('/company', {
-        onSuccess: (res) => {
-            console.log(res)
+        onSuccess: () => {
             data.showModal = false
             data.successModal = true
+            modalMessage.value = [`${form.name} has been added to the database`, `${form.name} created!`];
         }
     })
 }
 
 function openDeleteModal() {
+    modalMessage.value = [`Are you sure you want to delete this company?`, `Delete ${selectedCompany.value.name} ?`];
     data.deleteModal = !data.deleteModal
 }
 
-function handleDelete(id) {
+function handleDelete() {
+    router.delete(`/company/${selectedCompany.value.id}`, {
+        onSuccess: (res) => {
+            data.deleteModal = false
+            data.successModal = true
+            modalMessage.value = [`Data has been deleted from the database.`, `Successfully deleted ${selectedCompany.value.name}!`];
+        }
+    })
+}
 
+function handleEditForm() {
+    editForm.put(`/company/${selectedCompany.value.id}`, {
+        onSuccess: () => {
+            data.successModal = true
+            modalMessage.value = [`${editForm.name} has been updated in the database`, `${editForm.name} updated!`];
+        }
+    });
 }
 </script>
 
 <template>
     <Layout>
         <CreateCompanyModal v-model="data.showModal" @close="data.showModal = false"  @submit="handleSubmit" />
-        <SuccessModal v-model="data.successModal" @close="data.successModal = false"/>
-        <ConfirmDeleteModal v-model="data.deleteModal" @close="data.deleteModal = false"/>
+        <SuccessModal v-model="data.successModal" @close="data.successModal = false" :modalMessage="modalMessage[0]" :modalInfo="modalMessage[1]"/>
+        <ConfirmDeleteModal v-model="data.deleteModal" @close="data.deleteModal = false" @delete="handleDelete" :modalMessage="modalMessage[0]" :modalInfo="modalMessage[1]" />
 
         <Head title="Companies List" />
         <PageHeader title="Companies List" pageTitle="Companies" />
@@ -174,7 +203,7 @@ function handleDelete(id) {
                         <div class="d-flex justify-content-end mt-3" v-if="companies.last_page >= 1">
                             <div class="pagination-wrap hstack gap-2">
                                 <Link :only="['companies']" class="page-item pagination-prev"
-                                    :href=companies.prev_page_url :disabled="companies.current_page <= 1">
+                                    :href="companies.prev_page_url||''" :disabled="companies.current_page <= 1">
                                 Previous
                                 </Link>
                                 <ul class="pagination listjs-pagination mb-0">
@@ -187,7 +216,7 @@ function handleDelete(id) {
                                     </li>
                                 </ul>
                                 <Link :only="['companies']" class="page-item pagination-next"
-                                    :href=companies.next_page_url
+                                    :href="companies.next_page_url||''"
                                     :disabled="companies.current_page >= companies.last_page">
                                 Next
                                 </Link>
@@ -221,64 +250,57 @@ function handleDelete(id) {
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">NAMA PT</label>
-                                    <input type="text" class="form-control" id="nameInput" placeholder="NAMA PT"
-                                        :value=companies.data[0]?.name>
+                                    <input v-model="editForm.name" type="text" class="form-control" id="nameInput" placeholder="NAMA PT">
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">KODE PT</label>
-                                    <input type="text" class="form-control" id="codeInput" placeholder="KODE PT"
-                                        :value=companies.data[0]?.code>
+                                    <input v-model="editForm.code" type="text" class="form-control" id="codeInput" placeholder="KODE PT">
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">ALAMAT</label>
-                                    <textarea class="form-control" id="alamatInput"
-                                        rows="3">{{ companies.data[0]?.alamat }}</textarea>
+                                    <textarea v-model="editForm.alamat" class="form-control" id="alamatInput"
+                                        rows="3"></textarea>
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">NPWP</label>
-                                    <input type="text" class="form-control" id="npwpInput" placeholder="NPWP"
-                                        :value=companies.data[0]?.npwp>
+                                    <input v-model="editForm.npwp" type="text" class="form-control" id="npwpInput" placeholder="NPWP">
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">BPJS</label>
-                                    <input type="text" class="form-control" id="bpjsInput" placeholder="BPJS"
-                                        :value=companies.data[0]?.bpjs>
+                                    <input v-model="editForm.bpjs" type="text" class="form-control" id="bpjsInput" placeholder="BPJS">
                                 </div>
                             </BCol>
 
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">BANK</label>
-                                    <input type="text" class="form-control" id="bankInput" placeholder="BANK"
-                                        :value=companies.data[0]?.nama_bank>
+                                    <input v-model="editForm.nama_bank" type="text" class="form-control" id="bankInput" placeholder="BANK">
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">NO REKENING</label>
-                                    <input type="text" class="form-control" id="rekeningInput" placeholder="NO REKENING"
-                                        :value=companies.data[0]?.no_rekening>
+                                    <input v-model="editForm.no_rekening" type="text" class="form-control" id="rekeningInput" placeholder="NO REKENING">
                                 </div>
                             </BCol>
                             <BCol xxl="12" md="12">
                                 <div>
                                     <label for="placeholderInput" class="form-label">NAMA AKUN</label>
-                                    <input type="text" class="form-control" id="akunInput" placeholder="NAMA AKUN"
-                                        :value=companies.data[0]?.nama_akun>
+                                    <input v-model="editForm.nama_akun" type="text" class="form-control" id="akunInput" placeholder="NAMA AKUN">
                                 </div>
                             </BCol>
                         </BRow>
 
                         <div class="hstack gap-3">
-                            <BButton type="button" variant="soft-success"
+                            <BButton @click="handleEditForm" type="button" variant="soft-success"
                                 class="custom-toggle w-100 material-shadow-none" data-bs-toggle="button">
                                 <span class="icon-on"><i class="ri-check-line align-bottom me-1"></i> Save</span>
                             </BButton>

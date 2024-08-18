@@ -8,8 +8,8 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
-    info: String,
-    message: String
+    modalInfo: String,
+    modalMessage: String
 });
 
 import animationData from "@/Components/widgets/lupuorrc.json";
@@ -34,8 +34,8 @@ const closeModal = () => {
             <lottie colors="primary:#121331,secondary:#08a88a" trigger="loop" :options="lottieFile" :height="120"
                 :width="120" />
             <div class="mt-4">
-                <h4 class="mb-3">{{info}}</h4>
-                <p class="text-muted mb-4">{{message}}</p>
+                <h4 class="mb-3">{{modalInfo}}</h4>
+                <p class="text-muted mb-4">{{modalMessage}}</p>
                 <div class="hstack gap-2 justify-content-center">
                     <BLink @click="closeModal" class="btn btn-success">
                         Close</BLink>

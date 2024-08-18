@@ -54,7 +54,6 @@ class CompanyController extends Controller
         try {
             Company::create($validate);
         } catch (\Throwable $th) {
-            dd($th->getMessage());
         }
 
         return to_route('company.index');
@@ -79,16 +78,22 @@ class CompanyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Company $company)
+    public function update($id, Request $request)
     {
-        //
+        $record = Company::findOrFail($id);
+        $record->update($request->all());
+        return to_route('company.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Company $company)
+    public function destroy($id)
     {
-        //
+        $record = Company::findOrFail($id);
+
+        // Delete the record
+        $record->delete();
+        return to_route('company.index');
     }
 }

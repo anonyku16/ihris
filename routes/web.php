@@ -27,6 +27,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
         Route::controller(CompanyController::class)->group(function () {
             Route::get('/company', 'index')->name('company.index');
             Route::post('/company', 'store')->name('company.store');
+            Route::delete('/company/{id}', 'destroy')->name('company.destroy');
+            Route::put('/company/{id}', 'update')->name('company.update');
         });
 
         Route::controller(RoleController::class)->group(function () {

@@ -30,7 +30,6 @@ watch(() => props.showModal, (newVal) => {
 });
 
 const closeModal = () => {
-    modalVisible.value = false;
     emit('close');
 };
 
