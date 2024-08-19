@@ -8,7 +8,10 @@
 Run these commands:
 
 - ``composer install`` or ``composer update``
+- ``npm install``
 - ``npm run build``
+-  make a `.env` file by duplicating the `.env.example` file
+- adjust `.env` file content as your configuration
 - ``php artisan migrate``
 - ``php artisan db:seed``
 ## Default User
